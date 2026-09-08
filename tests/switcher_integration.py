@@ -112,6 +112,12 @@ try:
 	assert p.inspect()['thumbnailBuilds'] == opened['thumbnailBuilds'], 'JPEG refresh rebuilt window thumbnails'
 	p.send({'type': 'test_cancel'})
 	assert not p.inspect()['visible']
+	# Every opening must survive its initial foreground handoff.
+	for _ in range(5):
+		p.send({'type': 'test_cycle', 'direction': 1})
+		assert p.inspect()['visible'], 'First cycle cancelled during focus handoff'
+		p.send({'type': 'test_cancel'})
+		assert not p.inspect()['visible']
 	p.send({'type': 'test_select', 'client': work, 'tabId': 5})
 	assert q.next() == {'type': 'activate', 'version': 1, 'tabId': 5}
 	q.send({'type': 'result', 'ok': True})

@@ -811,8 +811,11 @@ namespace
 				updateThumbnails(); prepareFrame();
 				if (FAILED(DwmFlush())) { log("initial composition flush unavailable"); }
 				ShowWindow(overlay, SW_SHOW);
-				showing = true;
+				// Focus handoff can synchronously send WA_INACTIVE while input
+				// queues are attached/detached. Do not enable dismissal until
+				// that handoff finishes, or the first Tab cancels its own popup.
 				const bool granted = focusWindow(overlay);
+				showing = true;
 				UpdateWindow(overlay);
 				log("opened items=" + std::to_string(items.size()) + " foreground=" + std::to_string(granted)
 					+ " previousHwnd=" + std::to_string(reinterpret_cast<std::uint64_t>(previous)));
