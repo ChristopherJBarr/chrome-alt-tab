@@ -2,7 +2,7 @@
 
 Switch between Chrome tabs and ordinary Windows applications with Alt+Tab.
 
-**Experimental Windows 11 utility.** This is a custom switcher styled after Windows 11, with a Chrome extension and a local C++ helper. It does not inject Chrome tabs into Microsoft's native switcher. There is no permanent helper window or taskbar button.
+**Experimental Windows 11 utility.** This is a custom switcher styled after Windows 11, with a Chrome extension and a local C++ helper. It does not inject Chrome tabs into Microsoft's native switcher.
 
 Features:
 
