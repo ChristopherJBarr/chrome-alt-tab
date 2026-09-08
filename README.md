@@ -1,6 +1,6 @@
 # chrome-alt-tab
 
-Switch between Chrome tabs and ordinary Windows applications with Alt+Tab.
+I wanted Alt+Tab to include my Chrome tabs, so I built this. It lets you switch between individual Chrome tabs and ordinary Windows applications in one place, across Chrome profiles, with optional previews.
 
 **Experimental Windows 11 utility.** This is a custom switcher styled after Windows 11, with a Chrome extension and a local C++ helper. It does not inject Chrome tabs into Microsoft's native switcher.
 
