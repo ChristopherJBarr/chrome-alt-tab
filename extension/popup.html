@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chrome Alt+Tab</title>
+<link rel="stylesheet" href="popup.css">
+<body>
+	<h1><img src="icons/icon-48.png" width="28" height="28" alt="">Chrome Alt+Tab</h1>
+	<p id="status" role="status">Connecting…</p>
+	<button id="toggle" disabled>Loading…</button>
+	<hr>
+	<h2>Tab previews</h2>
+	<p>Optional screenshots of web tabs as you visit them. Images stay in memory on this PC and can include anything visible on the page.</p>
+	<p>Chrome asks for access to all websites to allow automatic capture. Private tabs and browser settings are excluded.</p>
+	<button id="previews" disabled>Loading…</button>
+	<p id="preview-status" role="status"></p>
+	<small id="version"></small>
+	<script type="module" src="popup.js"></script>
+</body>
+</html>

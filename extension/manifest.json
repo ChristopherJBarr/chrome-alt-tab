@@ -1,0 +1,38 @@
+{
+	"manifest_version": 3,
+	"name": "Chrome Alt+Tab (experimental)",
+	"version": "0.5.0",
+	"description": "Switch between Chrome tabs and Windows apps with a local Alt+Tab switcher.",
+	"minimum_chrome_version": "120",
+	"permissions": [
+		"tabs",
+		"nativeMessaging",
+		"storage",
+		"alarms"
+	],
+	"incognito": "not_allowed",
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+	"action": {
+		"default_title": "Chrome Alt+Tab: click to connect",
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "icons/icon-16.png",
+			"32": "icons/icon-32.png",
+			"48": "icons/icon-48.png",
+			"128": "icons/icon-128.png"
+		}
+	},
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxePzeLME5iVJD/DxZ/xi84tPhwfRjUZ3UqYwY6/XFGrbElRZ470ma4s+08kEpFmMokBFRZ0hNA2lnfwdh0IG+wBGhS1dAOTzS6WbeZlF94hBNEaOuCj7z3nrHhbiOK4OpWpzxm1aK74s2tFWku+TNovBK/880lD/XCgdC6ntIF1s/qdV35t6qZ9hrgJuXiWVS4lFRFckISK46WjF73LoRPe5MtcqY8EzoaWZ/+GM7XNtd4QCDH9hNVblQ3pkkKd/KDeMv52T3K0dqyjZ3mR+9Cp6GnlepdFaBg2jpyfSQaPtADU9WgMH9Cf7EO/Gh1Trj/a2DA6QeknG6ZvyhI5ZbQIDAQAB",
+	"optional_host_permissions": [
+		"<all_urls>"
+	],
+	"icons": {
+		"16": "icons/icon-16.png",
+		"32": "icons/icon-32.png",
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
+	}
+}

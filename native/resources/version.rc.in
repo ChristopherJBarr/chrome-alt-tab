@@ -1,0 +1,28 @@
+#include <windows.h>
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION @PROJECT_VERSION_MAJOR@,@PROJECT_VERSION_MINOR@,@PROJECT_VERSION_PATCH@,0
+PRODUCTVERSION @PROJECT_VERSION_MAJOR@,@PROJECT_VERSION_MINOR@,@PROJECT_VERSION_PATCH@,0
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEFLAGS VS_FF_PRERELEASE
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904b0"
+		BEGIN
+			VALUE "CompanyName", "chrome-alt-tab contributors"
+			VALUE "FileDescription", "Chrome Alt+Tab (preview)"
+			VALUE "FileVersion", "@PROJECT_VERSION@"
+			VALUE "InternalName", "chrome-alt-tab-switcher"
+			VALUE "LegalCopyright", "Copyright (c) 2026 chrome-alt-tab contributors"
+			VALUE "OriginalFilename", "chrome-alt-tab-switcher.exe"
+			VALUE "ProductName", "Chrome Alt+Tab"
+			VALUE "ProductVersion", "@PROJECT_VERSION@"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1200
+	END
+END

@@ -1,0 +1,9 @@
+:root { color-scheme: light dark; font: 14px/1.5 system-ui, sans-serif; }
+body { background: Canvas; color: CanvasText; width: 320px; margin: 0; padding: 20px; }
+h1 { display: flex; align-items: center; gap: 8px; font-size: 19px; margin: 0 0 10px; }
+h2 { font-size: 15px; margin-bottom: 8px; }
+p { margin: 10px 0; }
+button { font: inherit; padding: 8px 12px; cursor: pointer; }
+button:disabled { cursor: default; }
+hr { margin: 20px 0; opacity: .3; }
+small { opacity: .7; }

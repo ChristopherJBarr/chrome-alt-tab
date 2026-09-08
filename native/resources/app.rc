@@ -1,0 +1,2 @@
+#include "resource.h"
+IDI_CHROME_ALT_TAB ICON "app.ico"

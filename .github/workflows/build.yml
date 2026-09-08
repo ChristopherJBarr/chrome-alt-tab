@@ -1,0 +1,46 @@
+name: Windows build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2025
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -G "Visual Studio 17 2022" -A "x64,version=10.0.26100.0"
+      - name: Build
+        run: cmake --build build --config ${{ matrix.configuration }} --parallel
+      - name: Test extension model and service worker
+        run: node --test tests/extension.test.mjs tests/background.test.mjs tests/previews.test.mjs
+      - name: Test combined switcher model
+        run: ctest --test-dir build -C ${{ matrix.configuration }} --output-on-failure
+      - name: Test combined switcher IPC and popup lifecycle
+        run: python tests/switcher_integration.py build/native/${{ matrix.configuration }}/chrome-alt-tab-switcher.exe
+
+      - name: Package Windows preview
+        if: matrix.configuration == 'Release'
+        run: ./scripts/package-release.ps1 -BuildDirectory build
+      - name: Audit release package
+        if: matrix.configuration == 'Release'
+        run: python tests/package_audit.py (Get-ChildItem dist/*-windows-x64.zip).FullName
+      - name: Test per-user install and removal
+        if: matrix.configuration == 'Release'
+        run: ./tests/install_lifecycle.ps1 -Package (Get-ChildItem dist/*-windows-x64.zip).FullName
+      - uses: actions/upload-artifact@v4
+        if: matrix.configuration == 'Release'
+        with:
+          name: windows-x64-preview
+          path: |
+            dist/chrome-alt-tab-*-windows-x64.zip
+            dist/chrome-alt-tab-*-windows-x64.zip.sha256
+          if-no-files-found: error
