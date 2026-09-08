@@ -52,6 +52,6 @@ The app uses the documented Windows `WH_KEYBOARD_LL` hook, in its own process. I
 
 ## Project
 
-[Architecture](docs/architecture.md) ? [Protocol](docs/protocol.md) ? [Acceptance tests](docs/switcher.md) ? [Contributing](CONTRIBUTING.md) ? [Security](SECURITY.md)
+[Architecture](docs/architecture.md) | [Protocol](docs/protocol.md) | [Acceptance tests](docs/switcher.md) | [Contributing](CONTRIBUTING.md) | [Security](SECURITY.md)
 
 MIT licensed. Not affiliated with Microsoft or Google. The manifest contains a public key solely to give unpacked installations a stable extension ID; it contains no private signing key or personal account credentials.
