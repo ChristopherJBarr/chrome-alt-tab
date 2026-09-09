@@ -135,7 +135,7 @@ function connect() {
 				timers.clear(handshakeTimer);
 				handshakeTimer = null;
 				ready = true;
-				previewCapable = ["0.4.0", "0.5.0"].includes(message.hostVersion);
+				previewCapable = ["0.4.0", "0.5.0", "0.5.1"].includes(message.hostVersion);
 				previewStateCapable = message.previewState === true;
 				connectedSince = Date.now();
 				retryAt = 0;

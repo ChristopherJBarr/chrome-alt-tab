@@ -4,7 +4,7 @@ Chrome starts `org.chrome_alt_tab.host`. Each connection represents one profile.
 
 ## Handshake and snapshots
 
-The broker sends `ready` with `hostVersion: "0.5.0"` and `ownerMode: "custom-switcher"`. The extension then sends a complete snapshot:
+The broker sends `ready` with `hostVersion: "0.5.1"` and `ownerMode: "custom-switcher"`. The extension then sends a complete snapshot:
 
 ```json
 {
